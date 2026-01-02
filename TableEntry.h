@@ -19,7 +19,7 @@ public:
     // ctor por defecto: clave vacía
     TableEntry() : key(""), value() {}
 
-    // operadores amigos
+    // igualdad: solo por clave
     friend bool operator==(const TableEntry<V>& te1, const TableEntry<V>& te2) {
         return te1.key == te2.key;
     }
@@ -28,6 +28,16 @@ public:
         return te1.key != te2.key;
     }
 
+    // orden: solo por clave (lexicográfico)
+    friend bool operator<(const TableEntry<V>& te1, const TableEntry<V>& te2) {
+        return te1.key < te2.key;
+    }
+
+    friend bool operator>(const TableEntry<V>& te1, const TableEntry<V>& te2) {
+        return te1.key > te2.key;
+    }
+
+    // impresión
     friend std::ostream& operator<<(std::ostream& out, const TableEntry<V>& te) {
         out << "(" << te.key << " -> " << te.value << ")";
         return out;
