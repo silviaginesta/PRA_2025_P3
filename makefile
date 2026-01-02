@@ -7,3 +7,8 @@ clean:
 bin/testHashTable: testHashTable.cpp HashTable.h TableEntry.h Dict.h
 	mkdir -p bin
 	g++ -o bin/testHashTable testHashTable.cpp
+
+bin/testBSTree: testBSTree.cpp BSTree.h BSNode.h
+	mkdir -p bin
+	g++ -o bin/testBSTree testBSTree.cpp
+
