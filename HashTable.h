@@ -6,10 +6,7 @@
 #include <string>
 #include "Dict.h"
 #include "TableEntry.h"
-
-// Ajusta esta ruta según tu estructura de carpetas.
-// Si PRA_2425_P1 está al lado de PRA_2025_P3:
-#include "../practica1/ListLinked.h"
+#include "../../practica1/ListLinked.h"
 
 template <typename V>
 class HashTable : public Dict<V> {
